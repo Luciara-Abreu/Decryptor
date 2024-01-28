@@ -16,7 +16,7 @@ textarea{
     padding: 0; 
     margin: 0; 
     overflow: auto; 
-    caret-color: transparent; 
+    caret-color: var(--cor-secundaria);   /* transparent Torna o cursor invisível */
     font-family: "Merriweather", serif;
     font-weight: 400;
     font-style: normal;
@@ -95,9 +95,11 @@ export const ContainerRight = styled.div`
   margin: 20px;
 
   textarea {
-    background-color: transparent;
+    width: 100%;
+    margin: 3%;
+    padding: 3% 0 0 6%;
     color: #0A3871;
-    height: 70vh;
+    height: 68vh;
     font-size: 20px;
     color: var(--cor-terceira-font);
     }
@@ -140,10 +142,9 @@ export const ContainerResult = styled.div`
     width: 86%;
     height: auto;
     display: flex;
-    position: relative;
     flex-direction: column;
     justify-content: space-around;
-    gap: 48px;
+    gap: 66px;
 
 label{
   width: 90%;
@@ -152,5 +153,7 @@ label{
 
 .button-copy{
   width: 60%;
+  position: relative;
+  left: 12%;
 }
 `
