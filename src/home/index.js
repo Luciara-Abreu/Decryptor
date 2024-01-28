@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import useTextEncryption from '../hooks/useTextEncrytion';
 import alura from '../assets/Logo-alura.png'
-import { ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons, ContainerRight } from './styles';
+import pessoa from '../assets/pessoa.svg'
+import { ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons, 
+  ContainerRight, ContainerImag, ContainerResult } from './styles';
 
 const Home = () => {
   const [inputText, setInputText] = useState('');
@@ -44,7 +46,6 @@ const Home = () => {
         <ContainerText>
           <label>
             <textarea
-              className='text-area'
               placeholder="Digite seu texto..."
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
@@ -65,19 +66,21 @@ const Home = () => {
       <ContainerRight>
         {outputText == '' ? (
           <>
+          <ContainerImag>
+          <img src={pessoa} alt="gif animado" />
+          </ContainerImag>
             <h2> Nenhuma mensagem encontrada  </h2>
             <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
           </>
         ) : (
-          <>
+          <ContainerResult>          
             <label>
-              Resultado:
               <textarea value={outputText} readOnly />
             </label>
             <ContainerButtons>
               <button onClick={handleDecrypt} className='button-copy'>Copiar</button>
             </ContainerButtons>
-          </>
+          </ContainerResult>
         )}
       </ContainerRight>
     </ContainerMain>
