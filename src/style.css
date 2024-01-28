@@ -1,0 +1,25 @@
+
+:root{
+  --cor-primaria: #F3F5FC;
+  --cor-secundaria: #FFFFFF;
+  --cor-primaria-font-button: #0A3871;
+  --cor-secundaria-font-button: #D8DFE8;
+
+  /* dados dos botoes */
+  --largura-botao: 30%;
+  --altura-botao: 15px;
+  --display-botao: flex;
+  --alinhamento-botao: center;
+  --justificativa-botao: center;
+  --padding-botao: 24px;
+  --borda-raio-botao: 24px;
+  --cor-texto-botao: var(--cor-secundaria);
+  --borda-botao: solid 1px var(--cor-primaria-font-button);
+  --tamanho-fonte-botao: 16px;
+}
+
+body {  
+  margin: 0;
+  padding: 0;
+  background: var(--cor-primaria);
+}
