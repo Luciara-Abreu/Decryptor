@@ -3,7 +3,7 @@ import useTextEncryption from '../hooks/useTextEncrytion';
 import alura from '../assets/Logo-alura.png'
 import pessoa from '../assets/pessoa.svg'
 import { ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons, 
-  ContainerRight, ContainerImag, ContainerResult } from './styles';
+  ContainerRight, ContainerImag, ContainerResult, ContainerInformation } from './styles';
 
 const Home = () => {
   const [inputText, setInputText] = useState('');
@@ -67,10 +67,15 @@ const Home = () => {
         {outputText == '' ? (
           <>
           <ContainerImag>
-          <img src={pessoa} alt="gif animado" />
+          <img src={pessoa} alt="Pessoa olhando uma pedra precisoa com uma lupa" />
           </ContainerImag>
-            <h2> Nenhuma mensagem encontrada  </h2>
-            <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+          <ContainerInformation>
+            <p className='text-1'> Nenhuma mensagem </p>
+            <p className='text-1'> encontrada </p>
+
+            <p className='text-2 '>Digite um texto que você deseja</p>
+            <p className='text-3'>criptografar ou descriptografar.</p>              
+          </ContainerInformation>
           </>
         ) : (
           <ContainerResult>          

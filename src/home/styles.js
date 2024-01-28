@@ -20,7 +20,6 @@ textarea{
     font-family: "Merriweather", serif;
     font-weight: 400;
     font-style: normal;
-
 }
 `
 export const ContainerHeader = styled.div`
@@ -35,7 +34,6 @@ export const ContainerLeft = styled.div`
     flex-direction: column;
     justify-content: space-around;
 `
-
 export const ContainerText = styled.div`
 
 ::placeholder {
@@ -57,7 +55,6 @@ textarea {
 `
 export const ContainerButtons = styled.div`   
     display: flex;
-    /* padding-top: 150px; */
     justify-content: center;    
     gap: 10px;
 
@@ -93,45 +90,67 @@ export const ContainerButtons = styled.div`
 export const ContainerRight = styled.div`
   width: 35%;
   height: auto;
-  padding: 0 20px 0 20px;
-  margin: 20px;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  border-radius: 32px;  
   background-color: var(--cor-secundaria);
+  margin: 20px;
 
-textarea {
-  background-color: transparent;
-  color: #0A3871;
-  height: 70vh;
-  font-size: 20px;
-  color: var(--cor-terceira-font);
+  textarea {
+    background-color: transparent;
+    color: #0A3871;
+    height: 70vh;
+    font-size: 20px;
+    color: var(--cor-terceira-font);
+    }
+`
+export const ContainerImag = styled.div`
+width: 100%;
+padding: 2% 0 5% 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+export const ContainerInformation = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+justify-content: center;
+align-items: center;
+padding-bottom: 10px;
+
+  .text-1{
+    color: #343A40;
+    font-size: 24px;  
+    font-weight: 700;
+    margin: 0;  
+  }
+
+.text-2, .text-3{
+  color: #495057;
+  font-size: 24px;  
+  font-weight: 400;
+  margin: 0;  
+  }
+
+  .text-2{
+    padding-top: 3%;
   }
 `
-
-
-export const ContainerImag = styled.div`
-width: 35%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-`
-
 export const ContainerResult = styled.div`
-width: 100%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+    width: 86%;
+    height: auto;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 48px;
 
 label{
   width: 90%;
   height: 100%;
 }
+
 .button-copy{
-  width: 100%;
-  padding-top: 0!important;
+  width: 60%;
 }
 `
