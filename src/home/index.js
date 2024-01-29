@@ -2,30 +2,32 @@ import React, { useState } from 'react';
 import useTextEncryption from '../hooks/useTextEncrytion';
 import alura from '../assets/Logo-alura.png'
 import pessoa from '../assets/pessoa.svg'
-import { ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons, 
-  ContainerRight, ContainerImag, ContainerResult, ContainerInformation } from './styles';
+import {
+  ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons,
+  ContainerRight, ContainerImag, ContainerResult, ContainerInformation
+} from './styles';
 
 const Home = () => {
   const [inputText, setInputText] = useState('');
   const [outputText, setOutputText] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const {encryptText, decryptText } = useTextEncryption();
 
-  const { encryptText, decryptText } = useTextEncryption();
 
   const handleEncrypt = () => {
-    if (/[^a-z]/i.test(inputText)) {
-      setErrorMessage('Apenas letras minúsculas são permitidas.');
+    if (/[^a-z]/.test(inputText)) {
+      setErrorMessage('Letras maiúsculas e caracteres especiais não são permitidas para criptografia.');
       return;
     }
-
+  
     const encryptedText = encryptText(inputText);
     setOutputText(encryptedText);
     setErrorMessage('');
   };
 
   const handleDecrypt = () => {
-    if (/[^a-z]/i.test(inputText)) {
-      setErrorMessage('Caracteres e letras maiúsculas não são permitidas.');
+    if (/[^a-z]/.test(inputText)) {
+      setErrorMessage('Letras maiúsculas e caracteres especiais não são permitidas para criptografia.');
       return;
     }
 
@@ -33,6 +35,30 @@ const Home = () => {
     setOutputText(decryptedText);
     setErrorMessage('');
   };
+
+  const handleClear = () => {
+    setInputText('');
+    setOutputText('');
+    setErrorMessage('');
+  };
+
+
+  const handleCopy = () => {
+    const textArea = document.createElement('textarea');
+    textArea.value = outputText;
+
+    // Adiciona o elemento ao corpo do documento
+    document.body.appendChild(textArea);
+
+    // Seleciona o texto na área de texto criada
+    textArea.select();
+    document.execCommand('copy');
+
+    // Remove o elemento da árvore DOM
+    document.body.removeChild(textArea);
+  };
+
+
 
   return (
 
@@ -56,7 +82,7 @@ const Home = () => {
         <ContainerButtons>
           <button onClick={handleEncrypt} className='button-crytor'>Criptografar</button>
           <button onClick={handleDecrypt} className='button-descrytor'>Descriptografar</button>
-          <button onClick={handleDecrypt} className='button-clear'>Limpar</button>
+          <button onClick={handleClear} className='button-clear'>Limpar</button>
         </ContainerButtons>
       </ContainerLeft>
 
@@ -66,24 +92,24 @@ const Home = () => {
       <ContainerRight>
         {outputText == '' ? (
           <>
-          <ContainerImag>
-          <img src={pessoa} alt="Pessoa olhando uma pedra precisoa com uma lupa" />
-          </ContainerImag>
-          <ContainerInformation>
-            <p className='text-1'> Nenhuma mensagem </p>
-            <p className='text-1'> encontrada </p>
+            <ContainerImag>
+              <img src={pessoa} alt="Pessoa olhando uma pedra precisoa com uma lupa" />
+            </ContainerImag>
+            <ContainerInformation>
+              <p className='text-1'> Nenhuma mensagem </p>
+              <p className='text-1'> encontrada </p>
 
-            <p className='text-2 '>Digite um texto que você deseja</p>
-            <p className='text-3'>criptografar ou descriptografar.</p>              
-          </ContainerInformation>
+              <p className='text-2 '>Digite um texto que você deseja</p>
+              <p className='text-3'>criptografar ou descriptografar.</p>
+            </ContainerInformation>
           </>
         ) : (
-          <ContainerResult>          
+          <ContainerResult>
             <label>
               <textarea value={outputText} readOnly />
             </label>
             <ContainerButtons>
-              <button onClick={handleDecrypt} className='button-copy'>Copiar</button>
+              <button onClick={handleCopy} className='button-copy'>Copiar</button>
             </ContainerButtons>
           </ContainerResult>
         )}
