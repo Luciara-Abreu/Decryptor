@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Descriptografador/static/css/main.c85729bb.css",
+    "main.js": "/Descriptografador/static/js/main.dafc23c0.js",
+    "static/media/pessoa.svg": "/Descriptografador/static/media/pessoa.cd57497a937c57681e0c30c45b9d3db9.svg",
+    "index.html": "/Descriptografador/index.html",
+    "main.c85729bb.css.map": "/Descriptografador/static/css/main.c85729bb.css.map",
+    "main.dafc23c0.js.map": "/Descriptografador/static/js/main.dafc23c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c85729bb.css",
+    "static/js/main.dafc23c0.js"
+  ]
+}
