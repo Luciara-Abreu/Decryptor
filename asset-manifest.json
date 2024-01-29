@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Descriptografador/static/css/main.c85729bb.css",
-    "main.js": "/Descriptografador/static/js/main.dafc23c0.js",
-    "static/media/pessoa.svg": "/Descriptografador/static/media/pessoa.cd57497a937c57681e0c30c45b9d3db9.svg",
-    "index.html": "/Descriptografador/index.html",
-    "main.c85729bb.css.map": "/Descriptografador/static/css/main.c85729bb.css.map",
-    "main.dafc23c0.js.map": "/Descriptografador/static/js/main.dafc23c0.js.map"
+    "main.css": "/Luciara-Abreu/Decryptor.github.io/static/css/main.c85729bb.css",
+    "main.js": "/Luciara-Abreu/Decryptor.github.io/static/js/main.1647ad7b.js",
+    "static/media/pessoa.svg": "/Luciara-Abreu/Decryptor.github.io/static/media/pessoa.cd57497a937c57681e0c30c45b9d3db9.svg",
+    "index.html": "/Luciara-Abreu/Decryptor.github.io/index.html",
+    "main.c85729bb.css.map": "/Luciara-Abreu/Decryptor.github.io/static/css/main.c85729bb.css.map",
+    "main.1647ad7b.js.map": "/Luciara-Abreu/Decryptor.github.io/static/js/main.1647ad7b.js.map"
   },
   "entrypoints": [
     "static/css/main.c85729bb.css",
-    "static/js/main.dafc23c0.js"
+    "static/js/main.1647ad7b.js"
   ]
 }
