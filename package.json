@@ -1,7 +1,7 @@
 {
   "name": "Decryptor",
   "version": "0.1.0",
-  "private": true, 
+  "private": true,
   "homepage": "https://Luciara-Abreu.github.io/Decryptor",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -19,7 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",    
+    "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -43,6 +43,6 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.2.3"
   }
 }
