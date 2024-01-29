@@ -70,14 +70,14 @@ const Home = () => {
         </ContainerHeader>
 
         <ContainerText>
-          <label>
             <textarea
               placeholder="Digite seu texto..."
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
             />
-          </label>
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
         </ContainerText>
+
 
         <ContainerButtons>
           <button onClick={handleEncrypt} className='button-crytor'>Criptografar</button>
@@ -85,9 +85,6 @@ const Home = () => {
           <button onClick={handleClear} className='button-clear'>Limpar</button>
         </ContainerButtons>
       </ContainerLeft>
-
-
-      {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
 
       <ContainerRight>
         {outputText === '' ? (

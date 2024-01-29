@@ -29,12 +29,14 @@ height: 17vh;
 export const ContainerLeft = styled.div`
     width: 60%;
     height: auto;
-    padding: 40px 0px 0 40px;
+    padding: 40px 0px 20px 40px; 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 `
+
 export const ContainerText = styled.div`
+  height: 50vh;
 
 ::placeholder {
   padding-left: 150px;
@@ -51,12 +53,22 @@ textarea {
   color: var(--cor-primaria-font-button);
   height: 40vh;
   font-size: 32px;
-  }
+  }  
+
+  .error-message {
+    position: relative;
+    color: red;
+    font-size: 20px;    
+    margin-top: 20px;
+    left: 10%;
+    top:10%
+}
 `
+
 export const ContainerButtons = styled.div`   
     display: flex;
     justify-content: center;    
-    gap: 10px;
+    gap: 10px;  
 
     button {
     width: var(--largura-botao);
@@ -87,6 +99,7 @@ export const ContainerButtons = styled.div`
     color: var(--cor-primaria-font-button);
   } 
 `
+
 export const ContainerRight = styled.div`
   width: 35%;
   height: auto;
