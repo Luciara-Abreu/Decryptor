@@ -90,7 +90,7 @@ const Home = () => {
       {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
 
       <ContainerRight>
-        {outputText == '' ? (
+        {outputText === '' ? (
           <>
             <ContainerImag>
               <img src={pessoa} alt="Pessoa olhando uma pedra precisoa com uma lupa" />
