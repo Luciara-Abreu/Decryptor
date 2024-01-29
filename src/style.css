@@ -17,6 +17,8 @@
   --cor-texto-botao: var(--cor-secundaria);
   --borda-botao: solid 1px var(--cor-primaria-font-button);
   --tamanho-fonte-botao: 16px;
+  --shadow1:  0 0 10px #3498db, 0 0 20px #3498db;
+  --shadow2:  0 0 10px #9ca5ac, 0 0 20px #b1cbdd;
 }
 
 body {  
