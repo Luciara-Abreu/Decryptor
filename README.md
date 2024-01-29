@@ -52,18 +52,9 @@ A interface do usuário é composta por duas áreas principais:
    - Uma área que exibe mensagens criptografadas ou descriptografadas.
    - Mensagens de erro são exibidas em vermelho para fornecer feedback ao usuário.
 
-## Instalação e Execução
-
-Para utilizar o aplicativo, siga estas etapas:
-
-1. Clone este repositório.
-2. Instale as dependências usando `npm install`.
-3. Inicie o aplicativo com `npm start`.
-
-O aplicativo estará disponível em [http://localhost:3000](http://localhost:3000).
-
 ## Conclusão
 
-Esperamos que este aplicativo de criptografia seja útil para suas necessidades. Se você tiver dúvidas ou sugestões, não hesite em entrar em contato conosco.
+Esperamos que este aplicativo de criptografia seja útil para suas necessidades.
 
-Obrigado por escolher nosso aplicativo de criptografia!
+Atenciosamente:
+Lúci Abreu.
