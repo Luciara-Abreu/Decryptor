@@ -15,8 +15,8 @@ const Home = () => {
 
 
   const handleEncrypt = () => {
-    if (/[^a-z]/.test(inputText)) {
-      setErrorMessage('Letras maiúsculas e caracteres especiais não são permitidas para criptografia.');
+    if (/[^a-z\s]/.test(inputText)) {
+      setErrorMessage('Caracteres especiais não são permitidos para criptografia.');
       return;
     }
   
@@ -24,17 +24,18 @@ const Home = () => {
     setOutputText(encryptedText);
     setErrorMessage('');
   };
-
+  
   const handleDecrypt = () => {
-    if (/[^a-z]/.test(inputText)) {
-      setErrorMessage('Letras maiúsculas e caracteres especiais não são permitidas para criptografia.');
+    if (/[^a-z\s]/.test(inputText)) {
+      setErrorMessage('Caracteres especiais não são permitidos para criptografia.');
       return;
     }
-
+  
     const decryptedText = decryptText(inputText);
     setOutputText(decryptedText);
     setErrorMessage('');
   };
+
 
   const handleClear = () => {
     setInputText('');

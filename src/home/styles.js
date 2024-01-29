@@ -204,7 +204,7 @@ export const ContainerResult = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    gap: 66px;
+    gap: 60px;
 
 label{
   width: 90%;
