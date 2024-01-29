@@ -1,6 +1,6 @@
 # Decryptor
 
-![Tela do Aplicativo](https://github.com/Luciara-Abreu/decodificador-de-texto/assets/36546342/ed4435c6-008e-48df-9bb3-45365c428242)
+
 
 Bem-vindo ao Aplicativo de Criptografia! Este projeto oferece uma interface intuitiva para criptografar e descriptografar mensagens. Leia abaixo para entender as tecnologias utilizadas, as funcionalidades do aplicativo e como executá-lo.
 
