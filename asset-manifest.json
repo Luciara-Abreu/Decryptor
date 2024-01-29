@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Luciara-Abreu/Decryptor.github.io/static/css/main.c85729bb.css",
-    "main.js": "/Luciara-Abreu/Decryptor.github.io/static/js/main.1647ad7b.js",
-    "static/media/pessoa.svg": "/Luciara-Abreu/Decryptor.github.io/static/media/pessoa.cd57497a937c57681e0c30c45b9d3db9.svg",
-    "index.html": "/Luciara-Abreu/Decryptor.github.io/index.html",
-    "main.c85729bb.css.map": "/Luciara-Abreu/Decryptor.github.io/static/css/main.c85729bb.css.map",
-    "main.1647ad7b.js.map": "/Luciara-Abreu/Decryptor.github.io/static/js/main.1647ad7b.js.map"
+    "main.css": "/Decryptor/static/css/main.c85729bb.css",
+    "main.js": "/Decryptor/static/js/main.c305f9fd.js",
+    "static/media/pessoa.svg": "/Decryptor/static/media/pessoa.cd57497a937c57681e0c30c45b9d3db9.svg",
+    "index.html": "/Decryptor/index.html",
+    "main.c85729bb.css.map": "/Decryptor/static/css/main.c85729bb.css.map",
+    "main.c305f9fd.js.map": "/Decryptor/static/js/main.c305f9fd.js.map"
   },
   "entrypoints": [
     "static/css/main.c85729bb.css",
-    "static/js/main.1647ad7b.js"
+    "static/js/main.c305f9fd.js"
   ]
 }
