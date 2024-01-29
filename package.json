@@ -1,8 +1,8 @@
 {
-  "name": "Descriptografador",
+  "name": "Decryptor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://luciara-abreu.github.io/Descriptografador",
+  "homepage": "https://github.com/Luciara-Abreu/Decryptor.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
