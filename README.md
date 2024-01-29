@@ -1,4 +1,4 @@
-# Aplicativo de Criptografia
+# Decryptor
 
 ![Tela do Aplicativo](https://github.com/Luciara-Abreu/decodificador-de-texto/assets/36546342/ed4435c6-008e-48df-9bb3-45365c428242)
 
