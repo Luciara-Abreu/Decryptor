@@ -1,4 +1,4 @@
-# Decryptor
+# Decryptor - Aplicativo de Criptografia
 
 
 
@@ -21,19 +21,51 @@ Bem-vindo à documentação do aplicativo de criptografia! Este aplicativo foi d
 
 O aplicativo suporta a criptografia de mensagens, garantindo que apenas letras minúsculas são permitidas. Caracteres especiais e letras maiúsculas não são aceitos durante o processo de criptografia.
 
-#### Método
 
-- **handleEncrypt()**: Este método é acionado ao clicar no botão "Criptografar". Ele verifica se a entrada contém apenas letras minúsculas e, em seguida, utiliza o algoritmo de criptografia para produzir o texto criptografado.
-
-### Descriptografia
-
-O aplicativo permite descriptografar mensagens previamente criptografadas. Da mesma forma, apenas letras minúsculas são permitidas durante o processo de descriptografia.
 
 #### Método
 
-- **handleDecrypt()**: Acionado ao clicar no botão "Descriptografar", verifica se a entrada contém apenas letras minúsculas e realiza a descriptografia.
+- **handleEncrypt()**: O método handleEncrypt() é acionado ao clicar no botão "Criptografar". Ele executa as seguintes etapas:
 
-### Limpar
+Validação de Caracteres Especiais e Maiúsculas:
+
+Utiliza os métodos findUppercaseCharacters() e findSpecialCharacters() para identificar caracteres maiúsculos e especiais na entrada do usuário.
+Se caracteres maiúsculos são encontrados e a opção de transformar para minúsculas não está ativada, exibe uma mensagem de erro indicando que maiúsculas não são permitidas.
+Se caracteres especiais são encontrados, exibe uma mensagem de erro indicando que caracteres especiais não são permitidos.
+Execução da Criptografia:
+
+Se a validação passa, chama o método encryptText(inputText) para realizar a criptografia.
+O texto criptografado é armazenado em encryptedText.
+Transformação para Minúsculas (Opcional):
+
+Se a opção de transformar para minúsculas estiver ativada, o texto criptografado é convertido para minúsculas.
+Atualização do Estado:
+
+O estado outputText é atualizado com o texto resultante.
+A mensagem de erro é limpa.
+
+
+- **handleDecrypt()**: O método handleDecrypt() é acionado ao clicar no botão "Descriptografar". Ele segue um processo semelhante ao método handleEncrypt():
+
+Validação de Caracteres Especiais e Maiúsculas:
+
+Utiliza os métodos findUppercaseCharacters() e findSpecialCharacters() para identificar caracteres maiúsculos e especiais na entrada do usuário.
+Se caracteres maiúsculos são encontrados e a opção de transformar para minúsculas não está ativada, exibe uma mensagem de erro indicando que maiúsculas não são permitidas.
+Se caracteres especiais são encontrados, exibe uma mensagem de erro indicando que caracteres especiais não são permitidos.
+Execução da Descriptografia:
+
+Se a validação passa, chama o método decryptText(inputText) para realizar a descriptografia.
+O texto descriptografado é armazenado em decryptedText.
+Transformação para Minúsculas (Opcional):
+
+Se a opção de transformar para minúsculas estiver ativada, o texto descriptografado é convertido para minúsculas.
+Atualização do Estado:
+
+O estado outputText é atualizado com o texto resultante.
+A mensagem de erro é limpa.
+
+## Transformar para Minúsculas (Checkbox)
+O checkbox "Transformar maiúsculas para minúsculas" oferece ao usuário a opção de converter automaticamente o texto resultante (criptografado ou descriptografado) para minúsculas. Essa opção é útil para manter uma consistência no formato do texto. Quando ativado, a transformação é aplicada aos resultados gerados pelos métodos handleEncrypt() e handleDecrypt().
 
 - **handleClear()**: Ao clicar no botão "Limpar", todos os campos de entrada e saída são redefinidos para seus valores padrão.
 
