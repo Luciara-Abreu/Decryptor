@@ -97,6 +97,14 @@ textarea {
 }
 `
 
+export const ContainerCheckbox = styled.div`
+padding-left: 30px;
+
+@media (max-width:1200px){
+  padding-left: 20px;
+}
+`
+
 export const ContainerButtons = styled.div`   
   display: flex;
   justify-content: center;

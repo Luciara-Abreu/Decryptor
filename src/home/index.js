@@ -4,7 +4,7 @@ import alura from '../assets/Logo-alura.png'
 import pessoa from '../assets/pessoa.svg'
 import {
   ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons,
-  ContainerRight, ContainerImag, ContainerResult, ContainerInformation
+  ContainerRight, ContainerImag, ContainerResult, ContainerInformation, ContainerCheckbox
 } from './styles';
 
 const Home = () => {
@@ -14,24 +14,52 @@ const Home = () => {
   const {encryptText, decryptText } = useTextEncryption();
   const [transformToLowerCase, setTransformToLowerCase] = useState(false);
 
+  const findUppercaseCharacters = (text) => {
+    const uppercaseRegex = /[A-Z]/g;
+    const matches = text.match(uppercaseRegex);
+    return matches ? Array.from(new Set(matches)) : [];
+  };
+  
+  const findSpecialCharacters = (text) => {
+    const specialRegex = /[^a-zA-Z\s]/g;
+    const matches = text.match(specialRegex);
+    return matches ? Array.from(new Set(matches)) : [];
+  };
 
-  const handleEncrypt = () => {  
-    if (/[^a-z\s]/.test(inputText) && transformToLowerCase != true) {   
-      setErrorMessage('Caracteres especiais e maiúsculas não são permitidos para criptografia.');
+  const handleEncrypt = () => {
+    const forbiddenUppercase = findUppercaseCharacters(inputText);
+    const forbiddenSpecial = findSpecialCharacters(inputText);
+
+    if(forbiddenUppercase.length > 0 && transformToLowerCase != true){
+      const forbiddenCharacters = [...forbiddenUppercase];
+      setErrorMessage(`Maiúsculas não são permitidas: ${forbiddenCharacters.join(', ')}`);
+      return
+    }else if (forbiddenSpecial.length > 0 ) {   
+      const forbiddenCharacters = [...forbiddenSpecial];
+      setErrorMessage(`Caracteres especiais não são permitidos: ${forbiddenCharacters.join(', ')}`);
       return;
-    }else if(transformToLowerCase === true){
+    }else {
       const encryptedText = encryptText(inputText);
       const transformedText = transformToLowerCase ? encryptedText.toLowerCase() : encryptedText;
       setOutputText(transformedText);
       setErrorMessage('');
-    }     
+    }   
   };
-  
+
+
   const handleDecrypt = () => {
-    if (/[^a-z\s]/.test(inputText) && transformToLowerCase != true) {
-      setErrorMessage('Caracteres especiais e maiúsculas não são permitidos para criptografia.');
+    const forbiddenUppercase = findUppercaseCharacters(inputText);
+    const forbiddenSpecial = findSpecialCharacters(inputText);
+
+    if(forbiddenUppercase.length > 0 && transformToLowerCase != true){
+      const forbiddenCharacters = [...forbiddenUppercase];
+      setErrorMessage(`Maiúsculas não são permitidas: ${forbiddenCharacters.join(', ')}`);
+      return
+    }else if (forbiddenSpecial.length > 0 ) {   
+      const forbiddenCharacters = [...forbiddenSpecial];
+      setErrorMessage(`Caracteres especiais não são permitidos: ${forbiddenCharacters.join(', ')}`);
       return;
-    } else if(transformToLowerCase === true){
+    }else {
       const decryptedText = decryptText(inputText);
       const transformedText = transformToLowerCase ? decryptedText.toLowerCase() : decryptedText;
       setOutputText(transformedText);
@@ -44,6 +72,7 @@ const Home = () => {
     setInputText('');
     setOutputText('');
     setErrorMessage('');
+    setTransformToLowerCase(false)
   };
 
 
@@ -82,16 +111,16 @@ const Home = () => {
           {errorMessage && <div className="error-message">{errorMessage}</div>}
         </ContainerText>
 
-        <>
+        <ContainerCheckbox>
         <label>
               <input
                 type="checkbox"
                 checked={transformToLowerCase}
                 onChange={() => setTransformToLowerCase(!transformToLowerCase)}
               />
-              Transformar para minúsculas
+              Transformar maiúsculas para minúsculas.
             </label>
-        </>
+        </ContainerCheckbox>
 
 
         <ContainerButtons>          
