@@ -21,6 +21,11 @@ textarea{
     font-weight: 400;
     font-style: normal;
 }
+
+@media (max-width: 1200px) {
+    flex-direction: column;
+    height: auto;
+  }
 `
 
 export const ContainerHeader = styled.div`
@@ -35,6 +40,12 @@ export const ContainerLeft = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    @media (max-width:1200px){
+      width: 100%;
+      padding: 40px 0px 20px 0px;
+}
+
 `
 
 export const ContainerText = styled.div`
@@ -47,7 +58,7 @@ export const ContainerText = styled.div`
   font-style: normal;
   font-size: 32px;
   color: #0A3871;
-  height: 40vh;
+  height: 40vh;  
 }
 
 textarea {
@@ -64,6 +75,25 @@ textarea {
     margin-top: 20px;
     left: 10%;
     top:10%
+}
+
+@media (max-width:1200px){
+      width: 100%;
+      padding: 40px 0px 20px 0px;
+
+  ::placeholder {  
+    padding-left: 10px;
+  }  
+  textarea {
+    width: 90%;
+    padding: 5%;
+  }
+  .error-message {
+    padding: 10%;
+    left: -1%;
+    top: -20%;
+    font-size: 20px;
+  }
 }
 `
 
@@ -91,27 +121,9 @@ export const ContainerButtons = styled.div`
     color: var(--cor-primaria-font-button);
   }
 
-  .button-crytor:focus,
-  .button-crytor:active {
-    outline: none;
-    box-shadow: var(--shadow2);
-    transform: scale(0.95);
-    color: var(--cor-texto-botao);
-    background-color: var(--cor-primaria-font-button);
-  }
-
   .button-descrytor {
     background-color: var(--cor-secundaria-font-button);
     color: var(--cor-primaria-font-button);
-  }
-
-  .button-descrytor:focus,
-  .button-descrytor:active {
-    outline: none;
-    box-shadow: var(--shadow2);
-    transform: scale(0.95);
-    color: var(--cor-texto-botao);
-    background-color: var(--cor-primaria-font-button);
   }
 
   .button-clear {
@@ -119,20 +131,17 @@ export const ContainerButtons = styled.div`
     color: var(--cor-primaria-font-button);
   }
 
-  .button-clear:focus,
-  .button-clear:active {
-    outline: none;
-    box-shadow: var(--shadow2);
-    transform: scale(0.95);
-    color: var(--cor-texto-botao);
-    background-color: var(--cor-primaria-font-button);
-  }
-
   .button-copy {
     background-color: var(--cor-secundaria-font-button);
     color: var(--cor-primaria-font-button);
   }
 
+  .button-crytor:focus,
+  .button-crytor:active,
+  .button-descrytor:focus,
+  .button-descrytor:active,  
+  .button-clear:focus,
+  .button-clear:active,
   .button-copy:focus,
   .button-copy:active {
     outline: none;
@@ -141,8 +150,29 @@ export const ContainerButtons = styled.div`
     color: var(--cor-texto-botao);
     background-color: var(--cor-primaria-font-button);
   }
-`
 
+  @media (max-width:1200px){ 
+    flex-direction: column;
+    padding: 5%;
+
+    .button-crytor, .button-descrytor, .button-clear {
+      width: 100%;
+    }
+
+    .button-crytor:focus,
+    .button-crytor:active,
+    .button-descrytor:focus,
+    .button-descrytor:active,
+    .button-clear:focus,
+    .button-clear:active,
+    .button-copy:focus,
+    .button-copy:active {
+      width: 100%;
+      transform: none;
+  }
+
+  }
+`
 
 export const ContainerRight = styled.div`
   width: 35%;
@@ -160,6 +190,13 @@ export const ContainerRight = styled.div`
     font-size: 20px;
     color: var(--cor-terceira-font);
     }
+
+    @media (max-width:1200px){
+      width: 95%;
+      textarea {
+        margin: 0;
+      }
+}
 `
 
 export const ContainerImag = styled.div`
@@ -169,6 +206,11 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+@media (max-width:1200px){
+  width: 100%;
+  padding:0;
+}
 `
 
 export const ContainerInformation = styled.div`
@@ -196,6 +238,12 @@ padding-bottom: 10px;
   .text-2{
     padding-top: 3%;
   }
+
+  @media (max-width:1200px){
+    .text-2, .text-3{
+      font-size: 18px;  
+    }
+  }
 `
 
 export const ContainerResult = styled.div`
@@ -215,5 +263,14 @@ label{
   width: 60%;
   position: relative;
   left: 12%;
+}
+@media (max-width:1200px){ 
+  width: 100%;
+
+  .button-copy{
+  width: 100%;
+  padding: 5%;
+  left: 0%;
+}
 }
 `
