@@ -193,6 +193,7 @@ export const ContainerRight = styled.div`
 
     @media (max-width:1200px){
       width: 95%;
+      margin: 8px;
       textarea {
         margin: 0;
       }
