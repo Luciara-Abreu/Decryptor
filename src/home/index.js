@@ -12,28 +12,31 @@ const Home = () => {
   const [outputText, setOutputText] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const {encryptText, decryptText } = useTextEncryption();
+  const [transformToLowerCase, setTransformToLowerCase] = useState(false);
 
 
-  const handleEncrypt = () => {
-    if (/[^a-z\s]/.test(inputText)) {
+  const handleEncrypt = () => {  
+    if (/[^a-z\s]/.test(inputText) && transformToLowerCase != true) {   
       setErrorMessage('Caracteres especiais não são permitidos para criptografia.');
       return;
-    }
-  
-    const encryptedText = encryptText(inputText);
-    setOutputText(encryptedText);
-    setErrorMessage('');
+    }else if(transformToLowerCase === true){
+      const encryptedText = encryptText(inputText);
+      const transformedText = transformToLowerCase ? encryptedText.toLowerCase() : encryptedText;
+      setOutputText(transformedText);
+      setErrorMessage('');
+    }     
   };
   
   const handleDecrypt = () => {
-    if (/[^a-z\s]/.test(inputText)) {
+    if (/[^a-z\s]/.test(inputText) && transformToLowerCase != true) {
       setErrorMessage('Caracteres especiais não são permitidos para criptografia.');
       return;
-    }
-  
-    const decryptedText = decryptText(inputText);
-    setOutputText(decryptedText);
-    setErrorMessage('');
+    } else if(transformToLowerCase === true){
+      const decryptedText = decryptText(inputText);
+      const transformedText = transformToLowerCase ? decryptedText.toLowerCase() : decryptedText;
+      setOutputText(transformedText);
+      setErrorMessage('');
+    } 
   };
 
 
@@ -71,16 +74,27 @@ const Home = () => {
         </ContainerHeader>
 
         <ContainerText>
-            <textarea
-              placeholder="Digite seu texto..."
-              value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
-            />
+          <textarea
+            placeholder="Digite seu texto..."
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
+          />
           {errorMessage && <div className="error-message">{errorMessage}</div>}
         </ContainerText>
 
+        <>
+        <label>
+              <input
+                type="checkbox"
+                checked={transformToLowerCase}
+                onChange={() => setTransformToLowerCase(!transformToLowerCase)}
+              />
+              Transformar para minúsculas
+            </label>
+        </>
 
-        <ContainerButtons>
+
+        <ContainerButtons>          
           <button onClick={handleEncrypt} className='button-crytor'>Criptografar</button>
           <button onClick={handleDecrypt} className='button-descrytor'>Descriptografar</button>
           <button onClick={handleClear} className='button-clear'>Limpar</button>
