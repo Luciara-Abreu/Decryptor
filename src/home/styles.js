@@ -145,6 +145,39 @@ gap: 2px;
 }
 `
 
+export const ContainerButtonsTheme = styled.div`
+    width: 10%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+
+
+  .button-default, .button-dark, .button-image {
+    gap: 5px;
+    border-radius: 20px;
+    border-radius: var(--borda-raio-botao);
+    border: var(--borda-botao);
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    cursor: pointer;
+    background-color: var(--cor-secundaria-font-button);   
+    color: var(--cor-primaria-font-button);
+  }
+
+  .button-image:focus,
+  .button-image:active,
+  .button-dark:focus,
+  .button-dark:active,
+  .button-default:focus,
+  .button-default:active {
+    outline: none;
+    box-shadow: var(--shadow2);
+    transform: scale(0.95);
+    color: var(--cor-texto-botao);
+    background-color: var(--cor-primaria-font-button);
+  }
+` 
 export const ContainerButtons = styled.div`   
   display: flex;
   justify-content: center;
@@ -168,10 +201,6 @@ export const ContainerButtons = styled.div`
   .button-default, .button-dark, .button-image {
     background-color: var(--cor-secundaria-font-button);   
     color: var(--cor-primaria-font-button);
-  }
-//botões theme
-  .button-default, .button-dark, .button-image {
-    width: 90%;
   }
 
   .button-crytor:focus,

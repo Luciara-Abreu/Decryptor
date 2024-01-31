@@ -5,7 +5,8 @@ import atencao from '../assets/interrogacao.png'
 import pessoa from '../assets/pessoa.svg'
 import {
   ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons,
-  ContainerRight, ContainerImag, ContainerResult, ContainerInformation, ContainerCheckbox, ContainerTheme
+  ContainerRight, ContainerImag, ContainerResult, ContainerInformation, ContainerCheckbox, ContainerTheme,
+  ContainerButtonsTheme
 } from './styles';
 
 const Home = () => {
@@ -110,11 +111,11 @@ const Home = () => {
         <ContainerHeader>
           <img src={alura} alt="gif animado" />
 
-          <ContainerButtons>
-            <button onClick={themeDefault} className='button-default'>Tema Padrão</button>
-            <button onClick={themeDark} className='button-dark'>Modo Escuro</button>
-            <button onClick={themeImage} className='button-image'>Tema com Imagem</button>
-          </ContainerButtons>
+          <ContainerButtonsTheme>
+            <button onClick={themeDefault} className='button-default'>Claro</button>
+            <button onClick={themeDark} className='button-dark'>Escuro</button>
+            <button onClick={themeImage} className='button-image'>Imagem</button>
+          </ContainerButtonsTheme>
         </ContainerHeader>
 
         <ContainerText>
