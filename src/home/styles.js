@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import themaDarck from '../assets/mapa-wow.jpeg';
 
 
 export const ContainerMain = styled.div`
@@ -6,6 +7,23 @@ width: 100%;
 height: 100vh;
 display:flex;
 justify-content: space-between;
+
+background-color: ${(props) => {
+    switch (props.theme) {
+      case 'escuro':
+        return '#333';
+      case 'imagem':
+        return `url(${themaDarck})`;
+      default:
+        return 'var(--cor-primaria);';
+    }
+  }};
+  background-image: ${(props) =>
+    props.theme === 'imagem' ? `url(${themaDarck})` : 'none'};
+  color: ${(props) => (props.theme === 'escuro' ? '#F3F5FC;' : '#111')};
+  background-size: cover;
+  background-position: center;
+
 
 textarea{
     width: 100%;
@@ -16,11 +34,13 @@ textarea{
     padding: 0; 
     margin: 0; 
     overflow: auto; 
-    caret-color: var(--cor-secundaria);   /* transparent Torna o cursor invisível */
+    caret-color: var(--cor-secundaria); 
     font-family: "Merriweather", serif;
     font-weight: 400;
     font-style: normal;
 }
+
+
 
 @media (max-width: 1200px) {
     flex-direction: column;
@@ -29,8 +49,18 @@ textarea{
 `
 
 export const ContainerHeader = styled.div`
-width: 70%;
+width: 100%;
 height: 17vh;
+display: flex;
+align-items: start;
+justify-content: space-between;
+`
+export const ContainerTheme = styled.div`
+width: 50%;
+height: 17vh;
+display: flex;
+align-items: start;
+justify-content: space-around;
 `
 
 export const ContainerLeft = styled.div`
@@ -50,31 +80,35 @@ export const ContainerLeft = styled.div`
 
 export const ContainerText = styled.div`
   height: 50vh;
+  opacity: 0.8; 
 
 ::placeholder {
-  padding-left: 150px;
+  padding-left: 50px;
   font-family: "Merriweather", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 32px;
   color: #0A3871;
-  height: 40vh;  
+  height: 50vh;  
 }
 
 textarea {
-  background-color: var(--cor-primaria);
+  width: 95%;
   color: var(--cor-primaria-font-button);
-  height: 40vh;
+  height: 49vh;
   font-size: 32px;
+  border-radius: 40px;
+  background-color: var(--cor-secundaria);  
+  padding-left: 20px;
   }  
 
   .error-message {
     position: relative;
     color: red;
-    font-size: 20px;    
+    font-size: 20px;
     margin-top: 20px;
-    left: 10%;
-    top:10%
+    left: 41%;
+    top: 2%;
 }
 
 @media (max-width:1200px){
@@ -98,7 +132,20 @@ textarea {
 `
 
 export const ContainerCheckbox = styled.div`
+gap: 20px;
 padding-left: 30px;
+
+.atencao{
+  display:flex;
+  align-items: center;
+  gap: 2px;
+  padding-bottom: 5px;
+}
+
+.image-atencao{
+padding: 1px;
+gap: 2px;
+}
 
 @media (max-width:1200px){
   padding-left: 20px;

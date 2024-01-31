@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
 import useTextEncryption from '../hooks/useTextEncrytion';
 import alura from '../assets/Logo-alura.png'
+import atencao from '../assets/interrogacao.png'
 import pessoa from '../assets/pessoa.svg'
 import {
   ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons,
-  ContainerRight, ContainerImag, ContainerResult, ContainerInformation, ContainerCheckbox
+  ContainerRight, ContainerImag, ContainerResult, ContainerInformation, ContainerCheckbox, ContainerTheme
 } from './styles';
 
 const Home = () => {
   const [inputText, setInputText] = useState('');
   const [outputText, setOutputText] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const {encryptText, decryptText } = useTextEncryption();
+  const { encryptText, decryptText } = useTextEncryption();
   const [transformToLowerCase, setTransformToLowerCase] = useState(false);
+  const [theme, setTheme] = useState('padrao');
 
   const findUppercaseCharacters = (text) => {
     const uppercaseRegex = /[A-Z]/g;
     const matches = text.match(uppercaseRegex);
     return matches ? Array.from(new Set(matches)) : [];
   };
-  
+
   const findSpecialCharacters = (text) => {
     const specialRegex = /[^a-zA-Z\s]/g;
     const matches = text.match(specialRegex);
@@ -30,43 +32,41 @@ const Home = () => {
     const forbiddenUppercase = findUppercaseCharacters(inputText);
     const forbiddenSpecial = findSpecialCharacters(inputText);
 
-    if(forbiddenUppercase.length > 0 && transformToLowerCase != true){
+    if (forbiddenUppercase.length > 0 && transformToLowerCase != true) {
       const forbiddenCharacters = [...forbiddenUppercase];
       setErrorMessage(`Maiúsculas não são permitidas: ${forbiddenCharacters.join(', ')}`);
       return
-    }else if (forbiddenSpecial.length > 0 ) {   
+    } else if (forbiddenSpecial.length > 0) {
       const forbiddenCharacters = [...forbiddenSpecial];
       setErrorMessage(`Caracteres especiais não são permitidos: ${forbiddenCharacters.join(', ')}`);
       return;
-    }else {
+    } else {
       const encryptedText = encryptText(inputText);
       const transformedText = transformToLowerCase ? encryptedText.toLowerCase() : encryptedText;
       setOutputText(transformedText);
       setErrorMessage('');
-    }   
+    }
   };
-
 
   const handleDecrypt = () => {
     const forbiddenUppercase = findUppercaseCharacters(inputText);
     const forbiddenSpecial = findSpecialCharacters(inputText);
 
-    if(forbiddenUppercase.length > 0 && transformToLowerCase != true){
+    if (forbiddenUppercase.length > 0 && transformToLowerCase != true) {
       const forbiddenCharacters = [...forbiddenUppercase];
       setErrorMessage(`Maiúsculas não são permitidas: ${forbiddenCharacters.join(', ')}`);
       return
-    }else if (forbiddenSpecial.length > 0 ) {   
+    } else if (forbiddenSpecial.length > 0) {
       const forbiddenCharacters = [...forbiddenSpecial];
       setErrorMessage(`Caracteres especiais não são permitidos: ${forbiddenCharacters.join(', ')}`);
       return;
-    }else {
+    } else {
       const decryptedText = decryptText(inputText);
       const transformedText = transformToLowerCase ? decryptedText.toLowerCase() : decryptedText;
       setOutputText(transformedText);
       setErrorMessage('');
-    } 
+    }
   };
-
 
   const handleClear = () => {
     setInputText('');
@@ -74,7 +74,6 @@ const Home = () => {
     setErrorMessage('');
     setTransformToLowerCase(false)
   };
-
 
   const handleCopy = () => {
     const textArea = document.createElement('textarea');
@@ -91,15 +90,31 @@ const Home = () => {
     document.body.removeChild(textArea);
   };
 
+  const themeDefault = () => {
+    setTheme('padrao');
+  };
+
+  const themeDark = () => {
+    setTheme('escuro');
+  };
+
+  const themeImage = () => {
+    setTheme('imagem');
+  };
 
 
   return (
 
-    <ContainerMain>
-
+    <ContainerMain theme={theme}>
       <ContainerLeft>
         <ContainerHeader>
           <img src={alura} alt="gif animado" />
+
+          <ContainerTheme>
+            <button onClick={themeDefault} className='button-toggle-default'>Tema Padrão</button>
+            <button onClick={themeDark} className='button-toggle-dark-mode'>Modo Escuro</button>
+            <button onClick={themeImage} className='button-toggle-image'>Tema com Imagem</button>
+          </ContainerTheme>
         </ContainerHeader>
 
         <ContainerText>
@@ -112,18 +127,23 @@ const Home = () => {
         </ContainerText>
 
         <ContainerCheckbox>
-        <label>
-              <input
-                type="checkbox"
-                checked={transformToLowerCase}
-                onChange={() => setTransformToLowerCase(!transformToLowerCase)}
-              />
-              Transformar maiúsculas para minúsculas.
-            </label>
+          <div className='atencao'>
+          <img src={atencao} className='image-atencao' alt="imagem de atençao" />
+            Apenas letras minúsculas e sem acento.
+          </div>
+
+          <label>
+            <input
+              type="checkbox"
+              checked={transformToLowerCase}
+              onChange={() => setTransformToLowerCase(!transformToLowerCase)}
+            />
+            Transformar maiúsculas para minúsculas.
+          </label>
         </ContainerCheckbox>
 
 
-        <ContainerButtons>          
+        <ContainerButtons>
           <button onClick={handleEncrypt} className='button-crytor'>Criptografar</button>
           <button onClick={handleDecrypt} className='button-descrytor'>Descriptografar</button>
           <button onClick={handleClear} className='button-clear'>Limpar</button>
