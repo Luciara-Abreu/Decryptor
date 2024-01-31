@@ -74,6 +74,10 @@ export const ContainerLeft = styled.div`
 export const ContainerText = styled.div`
   height: 50vh;
   opacity: 0.8; 
+  display:flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
 ::placeholder {
   font-family: "Merriweather", serif;
@@ -105,15 +109,14 @@ textarea {
 }
 
 @media (max-width:1200px){
-      width: 100%;
-      padding: 40px 0px 20px 0px;
+   width: 100%;
 
   ::placeholder {  
     padding-left: 10px;
   }  
   textarea {
-    width: 90%;
-    padding: 5%;
+    width: 95%;
+    padding: 0%;
   }
   .error-message {
     padding: 10%;
@@ -152,8 +155,6 @@ export const ContainerButtonsTheme = styled.div`
     flex-direction: column;
     gap: 5px;
 
-
-
   .button-default, .button-dark, .button-image {
     gap: 5px;
     border-radius: 20px;
@@ -176,6 +177,10 @@ export const ContainerButtonsTheme = styled.div`
     transform: scale(0.95);
     color: var(--cor-texto-botao);
     background-color: var(--cor-primaria-font-button);
+  }
+
+  @media (max-width:1200px){
+    width: 20%;
   }
 ` 
 export const ContainerButtons = styled.div`   
