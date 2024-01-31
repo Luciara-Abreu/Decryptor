@@ -72,7 +72,7 @@ export const ContainerLeft = styled.div`
 
 export const ContainerText = styled.div`
   height: 50vh;
-  opacity: 0.8; 
+  opacity: 0.7; 
   display:flex;  
   flex-direction: column;
   justify-content: center;
@@ -108,7 +108,8 @@ textarea {
 }
 
 @media (max-width:1200px){
-   width: 100%;
+  width: 100%;
+  padding-bottom: 20px;
 
   ::placeholder {  
     padding-left: 10px;
@@ -257,6 +258,7 @@ export const ContainerRight = styled.div`
   border-radius: 32px;  
   background-color: var(--cor-secundaria);
   margin: 20px;
+  opacity: 0.7; 
 
   textarea {
     width: 100%;
