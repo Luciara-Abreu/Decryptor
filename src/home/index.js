@@ -110,11 +110,11 @@ const Home = () => {
         <ContainerHeader>
           <img src={alura} alt="gif animado" />
 
-          <ContainerTheme>
-            <button onClick={themeDefault} className='button-toggle-default'>Tema Padrão</button>
-            <button onClick={themeDark} className='button-toggle-dark-mode'>Modo Escuro</button>
-            <button onClick={themeImage} className='button-toggle-image'>Tema com Imagem</button>
-          </ContainerTheme>
+          <ContainerButtons>
+            <button onClick={themeDefault} className='button-default'>Tema Padrão</button>
+            <button onClick={themeDark} className='button-dark'>Modo Escuro</button>
+            <button onClick={themeImage} className='button-image'>Tema com Imagem</button>
+          </ContainerButtons>
         </ContainerHeader>
 
         <ContainerText>
