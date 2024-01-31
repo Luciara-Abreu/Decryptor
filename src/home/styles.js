@@ -55,13 +55,6 @@ display: flex;
 align-items: start;
 justify-content: space-between;
 `
-export const ContainerTheme = styled.div`
-width: 50%;
-height: 17vh;
-display: flex;
-align-items: start;
-justify-content: space-around;
-`
 
 export const ContainerLeft = styled.div`
     width: 60%;
@@ -83,19 +76,19 @@ export const ContainerText = styled.div`
   opacity: 0.8; 
 
 ::placeholder {
-  padding-left: 50px;
   font-family: "Merriweather", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 32px;
   color: #0A3871;
-  height: 50vh;  
+  height: 45vh;  
+  padding: 10px;
 }
 
 textarea {
   width: 95%;
-  color: var(--cor-primaria-font-button);
   height: 49vh;
+  color: var(--cor-primaria-font-button);
   font-size: 32px;
   border-radius: 40px;
   background-color: var(--cor-secundaria);  
@@ -171,24 +164,14 @@ export const ContainerButtons = styled.div`
     cursor: pointer;
   }
 
-  .button-crytor {
+  .button-crytor,  .button-descrytor,  .button-clear, .button-copy,
+  .button-default, .button-dark, .button-image {
     background-color: var(--cor-secundaria-font-button);   
     color: var(--cor-primaria-font-button);
   }
-
-  .button-descrytor {
-    background-color: var(--cor-secundaria-font-button);
-    color: var(--cor-primaria-font-button);
-  }
-
-  .button-clear {
-    background-color: var(--cor-secundaria-font-button);
-    color: var(--cor-primaria-font-button);
-  }
-
-  .button-copy {
-    background-color: var(--cor-secundaria-font-button);
-    color: var(--cor-primaria-font-button);
+//botões theme
+  .button-default, .button-dark, .button-image {
+    width: 90%;
   }
 
   .button-crytor:focus,
