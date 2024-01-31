@@ -53,6 +53,14 @@ height: 17vh;
 display: flex;
 align-items: start;
 justify-content: space-between;
+
+.imagem {
+    width: 24%;
+    display: flex;
+    position: relative;
+    left: 5%;
+    top: -52%;
+  }
 `
 
 export const ContainerLeft = styled.div`
@@ -258,7 +266,7 @@ export const ContainerRight = styled.div`
   border-radius: 32px;  
   background-color: var(--cor-secundaria);
   margin: 20px;
-  opacity: 0.7; 
+  opacity: 0.8; 
 
   textarea {
     width: 100%;
@@ -281,11 +289,25 @@ export const ContainerRight = styled.div`
 
 export const ContainerImag = styled.div`
 width: 100%;
-padding: 2% 0 5% 0;
+padding: 0% 0 5% 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+
+.claro {
+  width: 99%;
+  }
+
+  .escuro {
+    width: 56%;
+  }
+
+  .imagem {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
 
 @media (max-width:1200px){
   width: 100%;

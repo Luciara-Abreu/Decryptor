@@ -3,6 +3,10 @@ import useTextEncryption from '../hooks/useTextEncrytion';
 import alura from '../assets/Logo-alura.png'
 import atencao from '../assets/interrogacao.png'
 import pessoa from '../assets/pessoa.svg'
+import pessoablack from '../assets/homem-sem-rosto-procurando.gif'
+import pessoaImage from '../assets/guerreiro-horda.gif'
+import wow from '../assets/Luci5-removebg-preview.png'
+
 import {
   ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons,
   ContainerRight, ContainerImag, ContainerResult, ContainerInformation, ContainerCheckbox,
@@ -103,14 +107,27 @@ const Home = () => {
     setTheme('imagem');
   };
 
-console.log(theme)
+  const themeImages = {
+    claro: pessoa,
+    escuro: pessoablack,
+    imagem: pessoaImage,
+  };
+
+  const logosImages = {
+    claro: alura,
+    escuro: alura,
+    imagem: wow,
+  };
+
   return (
 
     <ContainerMain theme={theme}>
       <ContainerLeft>
-        <ContainerHeader>
-          <img src={alura} alt="gif animado" />
-
+        <ContainerHeader>         
+          {theme === 'claro' && <img src={logosImages[theme]} className='claro' alt='Logo Alura + Oracle'/>}
+          {theme === 'escuro' && <img src={logosImages[theme]} className='escuro' alt='Logo Alura + Oracle'/>}
+          {theme === 'imagem' && <img src={logosImages[theme]} className='imagem' alt='Logo Luci Wow'/>}
+          
           <ContainerButtonsTheme>
             <button onClick={themeDefault} className='button-default'>Claro</button>
             <button onClick={themeDark} className='button-dark'>Escuro</button>
@@ -127,9 +144,9 @@ console.log(theme)
           {errorMessage && <div className="error-message">{errorMessage}</div>}
         </ContainerText>
 
-        <ContainerCheckbox  theme={theme}>
+        <ContainerCheckbox theme={theme}>
           <div className='atencao'>
-          <img src={atencao} className='image-atencao' alt="imagem de atençao" />
+            <img src={atencao} className='image-atencao' alt="imagem de atençao" />
             Apenas letras minúsculas e sem acento.
           </div>
 
@@ -154,8 +171,10 @@ console.log(theme)
       <ContainerRight>
         {outputText === '' ? (
           <>
-            <ContainerImag>
-              <img src={pessoa} alt="Pessoa olhando uma pedra precisoa com uma lupa" />
+            <ContainerImag theme={theme}>
+              {theme === 'claro' && <img src={themeImages[theme]} className='claro' alt='thema claro'/>}
+              {theme === 'escuro' && <img src={themeImages[theme]} className='escuro' alt='thema escuro'/>}
+              {theme === 'imagem' && <img src={themeImages[theme]}  className='imagem'alt='thema com uma imagem'/>}
             </ContainerImag>
             <ContainerInformation>
               <p className='text-1'> Nenhuma mensagem </p>
