@@ -5,7 +5,7 @@ import atencao from '../assets/interrogacao.png'
 import pessoa from '../assets/pessoa.svg'
 import {
   ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons,
-  ContainerRight, ContainerImag, ContainerResult, ContainerInformation, ContainerCheckbox, ContainerTheme,
+  ContainerRight, ContainerImag, ContainerResult, ContainerInformation, ContainerCheckbox,
   ContainerButtonsTheme
 } from './styles';
 
@@ -15,7 +15,7 @@ const Home = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const { encryptText, decryptText } = useTextEncryption();
   const [transformToLowerCase, setTransformToLowerCase] = useState(false);
-  const [theme, setTheme] = useState('padrao');
+  const [theme, setTheme] = useState('claro');
 
   const findUppercaseCharacters = (text) => {
     const uppercaseRegex = /[A-Z]/g;
@@ -33,7 +33,7 @@ const Home = () => {
     const forbiddenUppercase = findUppercaseCharacters(inputText);
     const forbiddenSpecial = findSpecialCharacters(inputText);
 
-    if (forbiddenUppercase.length > 0 && transformToLowerCase != true) {
+    if (forbiddenUppercase.length > 0 && transformToLowerCase !== true) {
       const forbiddenCharacters = [...forbiddenUppercase];
       setErrorMessage(`Maiúsculas não são permitidas: ${forbiddenCharacters.join(', ')}`);
       return
@@ -53,7 +53,7 @@ const Home = () => {
     const forbiddenUppercase = findUppercaseCharacters(inputText);
     const forbiddenSpecial = findSpecialCharacters(inputText);
 
-    if (forbiddenUppercase.length > 0 && transformToLowerCase != true) {
+    if (forbiddenUppercase.length > 0 && transformToLowerCase !== true) {
       const forbiddenCharacters = [...forbiddenUppercase];
       setErrorMessage(`Maiúsculas não são permitidas: ${forbiddenCharacters.join(', ')}`);
       return
@@ -92,7 +92,7 @@ const Home = () => {
   };
 
   const themeDefault = () => {
-    setTheme('padrao');
+    setTheme('claro');
   };
 
   const themeDark = () => {
@@ -103,7 +103,7 @@ const Home = () => {
     setTheme('imagem');
   };
 
-
+console.log(theme)
   return (
 
     <ContainerMain theme={theme}>
@@ -127,7 +127,7 @@ const Home = () => {
           {errorMessage && <div className="error-message">{errorMessage}</div>}
         </ContainerText>
 
-        <ContainerCheckbox>
+        <ContainerCheckbox  theme={theme}>
           <div className='atencao'>
           <img src={atencao} className='image-atencao' alt="imagem de atençao" />
             Apenas letras minúsculas e sem acento.

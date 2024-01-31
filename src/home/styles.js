@@ -20,9 +20,8 @@ background-color: ${(props) => {
   }};
   background-image: ${(props) =>
     props.theme === 'imagem' ? `url(${themaDarck})` : 'none'};
-  color: ${(props) => (props.theme === 'escuro' ? '#F3F5FC;' : '#111')};
-  background-size: cover;
-  background-position: center;
+    background-size: cover;
+    background-position: center;
 
 
 textarea{
@@ -128,15 +127,21 @@ textarea {
 `
 
 export const ContainerCheckbox = styled.div`
-gap: 20px;
-padding-left: 30px;
-
-.atencao{
-  display:flex;
-  align-items: center;
+display:flex;
   gap: 2px;
-  padding-bottom: 5px;
-}
+  flex-direction: column;
+  padding-left: 30px;
+  color: ${(props) =>  props.theme === 'claro' ? 'var(--cor-primaria-font-button)' : 'white'};
+
+
+  .atencao {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding-bottom: 5px;
+    color: inherit; 
+  }
+
 
 .image-atencao{
 padding: 1px;
