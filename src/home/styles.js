@@ -144,10 +144,9 @@ textarea {
   }  
   textarea {
     width: 95%;
-    padding: 0%;
+    padding: 10%;
   }
   .error-message {
-    padding: 10%;
     left: -1%;
     top: -20%;
     font-size: 20px;
