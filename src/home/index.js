@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import useTextEncryption from '../hooks/useTextEncrytion';
-import alura from '../assets/Logo-alura.png'
 import atencao from '../assets/interrogacao.png'
 import pessoa from '../assets/pessoa.svg'
 import pessoablack from '../assets/homem-sem-rosto-procurando.gif'
 import pessoaImage from '../assets/guerreiro-horda.gif'
 import wow from '../assets/Luci5-removebg-preview.png'
+import alura from '../assets/alura_oracle.mp4'
+import oracle from '../assets/alura-logo-escuro.mp4'
 
 import {
   ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons,
@@ -115,7 +116,7 @@ const Home = () => {
 
   const logosImages = {
     claro: alura,
-    escuro: alura,
+    escuro: oracle,
     imagem: wow,
   };
 
@@ -123,11 +124,20 @@ const Home = () => {
 
     <ContainerMain theme={theme}>
       <ContainerLeft>
-        <ContainerHeader>         
-          {theme === 'claro' && <img src={logosImages[theme]} className='claro' alt='Logo Alura + Oracle'/>}
-          {theme === 'escuro' && <img src={logosImages[theme]} className='escuro' alt='Logo Alura + Oracle'/>}
-          {theme === 'imagem' && <img src={logosImages[theme]} className='imagem' alt='Logo Luci Wow'/>}
+        <ContainerHeader>
+          {theme === 'claro' && <video autoPlay loop muted>
+            <source src={logosImages[theme]} type="video/mp4" className='claro' />
+            Seu navegador não suporta o elemento de vídeo.
+          </video>}
+
+          {theme === 'escuro' && <video autoPlay loop muted>
+            <source src={logosImages[theme]} type="video/mp4" className='escuro' />
+            Seu navegador não suporta o elemento de vídeo.
+          </video>}
+
           
+          {theme === 'imagem' && <img src={logosImages[theme]} className='imagem' alt='Logo Luci Wow' />}
+
           <ContainerButtonsTheme>
             <button onClick={themeDefault} className='button-default'>Claro</button>
             <button onClick={themeDark} className='button-dark'>Escuro</button>
@@ -172,9 +182,9 @@ const Home = () => {
         {outputText === '' ? (
           <>
             <ContainerImag theme={theme}>
-              {theme === 'claro' && <img src={themeImages[theme]} className='claro' alt='thema claro'/>}
-              {theme === 'escuro' && <img src={themeImages[theme]} className='escuro' alt='thema escuro'/>}
-              {theme === 'imagem' && <img src={themeImages[theme]}  className='imagem'alt='thema com uma imagem'/>}
+              {theme === 'claro' && <img src={themeImages[theme]} className='claro' alt='thema claro' />}
+              {theme === 'escuro' && <img src={themeImages[theme]} className='escuro' alt='thema escuro' />}
+              {theme === 'imagem' && <img src={themeImages[theme]} className='imagem' alt='thema com uma imagem' />}
             </ContainerImag>
             <ContainerInformation>
               <p className='text-1'> Nenhuma mensagem </p>

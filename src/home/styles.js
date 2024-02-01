@@ -11,7 +11,7 @@ justify-content: space-between;
 background-color: ${(props) => {
     switch (props.theme) {
       case 'escuro':
-        return '#333';
+        return 'var(--cor-background)';
       case 'imagem':
         return `url(${themaDarck})`;
       default:
@@ -56,6 +56,14 @@ justify-content: space-between;
 
 .imagem {
     width: 24%;
+    display: flex;
+    position: relative;
+    left: 5%;
+    top: -52%;
+  }
+
+  video {
+    width: 22%;
     display: flex;
     position: relative;
     left: 5%;
