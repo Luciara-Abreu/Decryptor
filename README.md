@@ -48,9 +48,9 @@ A interface é composta por duas áreas principais:
 - **Área de Saída (Direita)**: Exibe mensagens criptografadas ou descritas. Mensagens de erro são destacadas em vermelho.
 
 ## Imagens de Plano de Fundo (Escolha a Sua!)
-- ![Tela clara 1](link_da_imagem_1)
-- ![Tela escura 2](link_da_imagem_2)
-- ![Tela imagem 3](link_da_imagem_3)
+- ![Tela clara 1](https://github.com/Luciara-Abreu/Decryptor/assets/36546342/cf0dd657-6ba9-4f7c-a572-5663ab2f0e5b)
+- ![Tela escura 2](https://github.com/Luciara-Abreu/Decryptor/assets/36546342/ac8b200f-412d-4012-a416-56a450e1fdc0)
+- ![Tela imagem 3](https://github.com/Luciara-Abreu/Decryptor/assets/36546342/b121ec9b-6935-4198-a294-6a420a66874a)
 
 ## Conclusão
 Esperamos que o Decryptor seja útil para suas necessidades de criptografia. Fique à vontade para explorar e experimentar!
