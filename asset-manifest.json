@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/Decryptor/static/css/main.54426d72.css",
-    "main.js": "/Decryptor/static/js/main.10aba03a.js",
+    "main.css": "/Decryptor/static/css/main.7cc3dbc6.css",
+    "main.js": "/Decryptor/static/js/main.be295a5b.js",
+    "static/media/guerreiro-horda.gif": "/Decryptor/static/media/guerreiro-horda.aa3c70f8f92c29d7fdb3.gif",
+    "static/media/homem-sem-rosto-procurando.gif": "/Decryptor/static/media/homem-sem-rosto-procurando.e127cd3719f949de392b.gif",
+    "static/media/Luci5-removebg-preview.png": "/Decryptor/static/media/Luci5-removebg-preview.f3b223e16e88aaca6cd5.png",
     "static/media/mapa-wow.jpeg": "/Decryptor/static/media/mapa-wow.ce04f5f0a2a1b786c970.jpeg",
+    "static/media/alura_oracle.mp4": "/Decryptor/static/media/alura_oracle.b5e97f8b5af6064cdc72.mp4",
+    "static/media/alura-logo-escuro.mp4": "/Decryptor/static/media/alura-logo-escuro.8315b8508d9ed07a21d9.mp4",
     "static/media/pessoa.svg": "/Decryptor/static/media/pessoa.cd57497a937c57681e0c30c45b9d3db9.svg",
     "index.html": "/Decryptor/index.html",
-    "main.54426d72.css.map": "/Decryptor/static/css/main.54426d72.css.map",
-    "main.10aba03a.js.map": "/Decryptor/static/js/main.10aba03a.js.map"
+    "main.7cc3dbc6.css.map": "/Decryptor/static/css/main.7cc3dbc6.css.map",
+    "main.be295a5b.js.map": "/Decryptor/static/js/main.be295a5b.js.map"
   },
   "entrypoints": [
-    "static/css/main.54426d72.css",
-    "static/js/main.10aba03a.js"
+    "static/css/main.7cc3dbc6.css",
+    "static/js/main.be295a5b.js"
   ]
 }
