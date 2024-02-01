@@ -69,6 +69,18 @@ justify-content: space-between;
     left: 5%;
     top: -52%;
   }
+  @media (max-width:1200px){
+    .imagem {
+      width: 43%;
+      left: 5%;
+      top: -24%;
+    }
+    video {
+      width: 43%;
+      left: 5%;
+      top: -24%;
+      }
+    }
 `
 
 export const ContainerLeft = styled.div`
