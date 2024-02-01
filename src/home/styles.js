@@ -55,19 +55,19 @@ align-items: start;
 justify-content: space-between;
 
 .imagem {
-    width: 24%;
+    width: 20%;
     display: flex;
     position: relative;
     left: 5%;
-    top: -52%;
+    top: -24%;
   }
 
   video {
-    width: 22%;
+    width: 15%;
     display: flex;
     position: relative;
     left: 5%;
-    top: -52%;
+    top: -21%;
   }
   @media (max-width:1200px){
     .imagem {
@@ -99,7 +99,7 @@ export const ContainerLeft = styled.div`
 `
 
 export const ContainerText = styled.div`
-  height: 50vh;
+  height: 49vh;
   opacity: 0.7; 
   display:flex;  
   flex-direction: column;
@@ -112,7 +112,7 @@ export const ContainerText = styled.div`
   font-style: normal;
   font-size: 32px;
   color: #0A3871;
-  height: 45vh;  
+  height: auto;  
   padding: 10px;
 }
 
@@ -127,12 +127,11 @@ textarea {
   }  
 
   .error-message {
-    position: relative;
+    position: absolute;
     color: red;
     font-size: 20px;
-    margin-top: 20px;
-    left: 41%;
-    top: 2%;
+    left: 27%;
+    top: 80%;
 }
 
 @media (max-width:1200px){
@@ -148,7 +147,7 @@ textarea {
   }
   .error-message {
     left: -1%;
-    top: -20%;
+    top: -2%;
     font-size: 20px;
   }
 }
@@ -314,10 +313,12 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 
+video {
+  width: 98%;
+  height: 70vh;
+  border-radius: 50%;
+}
 
-.claro {
-  width: 99%;
-  }
 
   .escuro {
     width: 56%;
@@ -326,11 +327,16 @@ align-items: center;
   .imagem {
     width: 100%;
     border-radius: 20px 20px 0 0;
+    padding-bottom: 40px;
   }
 
 @media (max-width:1200px){
   width: 100%;
   padding:0;
+
+  video {
+  border-radius: 0;
+}
 }
 `
 

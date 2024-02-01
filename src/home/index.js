@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useTextEncryption from '../hooks/useTextEncrytion';
 import atencao from '../assets/interrogacao.png'
-import pessoa from '../assets/pessoa.svg'
+import pessoa from '../assets/em-busca-do-tesouro.mp4'
 import pessoablack from '../assets/homem-sem-rosto-procurando.gif'
 import pessoaImage from '../assets/guerreiro-horda.gif'
 import wow from '../assets/Luci5-removebg-preview.png'
@@ -41,18 +41,23 @@ const Home = () => {
     if (forbiddenUppercase.length > 0 && transformToLowerCase !== true) {
       const forbiddenCharacters = [...forbiddenUppercase];
       setErrorMessage(`Maiúsculas não são permitidas: ${forbiddenCharacters.join(', ')}`);
-      return
+      return;
     } else if (forbiddenSpecial.length > 0) {
       const forbiddenCharacters = [...forbiddenSpecial];
       setErrorMessage(`Caracteres especiais não são permitidos: ${forbiddenCharacters.join(', ')}`);
       return;
     } else {
-      const encryptedText = encryptText(inputText);
-      const transformedText = transformToLowerCase ? encryptedText.toLowerCase() : encryptedText;
-      setOutputText(transformedText);
+      // Transformação para minúsculas aqui
+      const transformedInputText = transformToLowerCase ? inputText.toLowerCase() : inputText;
+
+      // Criptografia aqui
+      const encryptedText = encryptText(transformedInputText);
+
+      setOutputText(encryptedText);
       setErrorMessage('');
     }
   };
+
 
   const handleDecrypt = () => {
     const forbiddenUppercase = findUppercaseCharacters(inputText);
@@ -61,18 +66,23 @@ const Home = () => {
     if (forbiddenUppercase.length > 0 && transformToLowerCase !== true) {
       const forbiddenCharacters = [...forbiddenUppercase];
       setErrorMessage(`Maiúsculas não são permitidas: ${forbiddenCharacters.join(', ')}`);
-      return
+      return;
     } else if (forbiddenSpecial.length > 0) {
       const forbiddenCharacters = [...forbiddenSpecial];
       setErrorMessage(`Caracteres especiais não são permitidos: ${forbiddenCharacters.join(', ')}`);
       return;
     } else {
-      const decryptedText = decryptText(inputText);
-      const transformedText = transformToLowerCase ? decryptedText.toLowerCase() : decryptedText;
-      setOutputText(transformedText);
+      // Transformação para minúsculas aqui
+      const transformedInputText = transformToLowerCase ? inputText.toLowerCase() : inputText;
+
+      // Descriptografia aqui
+      const decryptedText = decryptText(transformedInputText);
+
+      setOutputText(decryptedText);
       setErrorMessage('');
     }
   };
+
 
   const handleClear = () => {
     setInputText('');
@@ -109,8 +119,8 @@ const Home = () => {
   };
 
   const themeImages = {
-    claro: pessoa,
-    escuro: pessoablack,
+    claro: pessoablack,
+    escuro: pessoa,
     imagem: pessoaImage,
   };
 
@@ -135,7 +145,7 @@ const Home = () => {
             Seu navegador não suporta o elemento de vídeo.
           </video>}
 
-          
+
           {theme === 'imagem' && <img src={logosImages[theme]} className='imagem' alt='Logo Luci Wow' />}
 
           <ContainerButtonsTheme>
@@ -182,9 +192,18 @@ const Home = () => {
         {outputText === '' ? (
           <>
             <ContainerImag theme={theme}>
-              {theme === 'claro' && <img src={themeImages[theme]} className='claro' alt='thema claro' />}
-              {theme === 'escuro' && <img src={themeImages[theme]} className='escuro' alt='thema escuro' />}
+              {theme === 'claro' && <img src={themeImages[theme]} className='escuro' alt='thema escuro' />}
               {theme === 'imagem' && <img src={themeImages[theme]} className='imagem' alt='thema com uma imagem' />}
+              {/* {theme === 'claro' && <video autoPlay loop muted>
+                <source src={themeImages[theme]} type="video/mp4" className='claro' />
+                Seu navegador não suporta o elemento de vídeo.
+              </video>} */}
+
+              {theme === 'escuro' && <video autoPlay loop muted>
+                <source src={themeImages[theme]} type="video/mp4" className='claro' />
+                Seu navegador não suporta o elemento de vídeo.
+              </video>}
+           
             </ContainerImag>
             <ContainerInformation>
               <p className='text-1'> Nenhuma mensagem </p>
