@@ -57,3 +57,68 @@ Esperamos que o Decryptor seja útil para suas necessidades de criptografia. Fiq
 
 Atenciosamente,
 Lúci Abreu.
+
+
+- 
+## Como fazer o deploy de um projeto Create React App no GitHub Pages, você pode seguir os passos abaixo. Vou guiá-lo através do processo:
+
+Dentro do seu projetom, instale a biblioteca gh-pages:
+
+No terminal, navegue até o diretório do seu projeto React.
+
+Execute o seguinte comando para instalar a biblioteca gh-pages:
+
+bash
+# Copy code
+npm install gh-pages --save-dev
+Atualize o arquivo package.json:
+
+Abra o arquivo package.json do seu projeto.
+Adicione as seguintes linhas ao nível superior do arquivo:
+
+json
+# Copy code
+"homepage": "https://seunomeusuario.github.io/nomerepositorio",
+Substitua "seunomeusuario" pelo seu nome de usuário do GitHub e "nomerepositorio" pelo nome do repositório que você criou.
+
+- ![Tela exemplo](
+  https://github.com/Luciara-Abreu/Decryptor/assets/36546342/ab7045a6-802c-4d12-9a52-3b1e76a89384
+)
+
+Adicione scripts ao package.json:
+Adicione os seguintes scripts no arquivo scripts:
+
+json
+# Copy code
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+}
+
+- ![Tela exemplo](
+  https://github.com/Luciara-Abreu/Decryptor/assets/36546342/8bb83dbe-9667-4531-a2fb-bdb01a04ac1a
+)
+
+Faça o deploy do seu aplicativo:
+
+No terminal, execute o seguinte comando para fazer o build e fazer o deploy para o GitHub Pages:
+
+bash
+# Copy code
+npm run deploy
+Verifique o GitHub Pages:
+
+Após a conclusão do deploy, vá até as configurações do seu repositório no GitHub.
+Role para baixo até a seção GitHub Pages.
+Você deve ver uma mensagem indicando que seu site está publicado. O link para o seu site também será fornecido.
+
+- ![Tela exemplo](
+  https://github.com/Luciara-Abreu/Decryptor/assets/36546342/0d63ca2e-b9a7-476d-8808-004f344bcac0
+)
+
+- ![Tela exemplo](
+ https://github.com/Luciara-Abreu/Decryptor/assets/36546342/35cafcde-f7c4-4393-afdc-7f9cd1c1dceb
+)
+
+
+Agora seu aplicativo React deve estar disponível em https://seunomeusuario.github.io/nomerepositorio. Lembre-se de substituir "seunomeusuario" e "nomerepositorio" pelos seus próprios detalhes.
