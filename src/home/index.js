@@ -7,6 +7,9 @@ import pessoaImage from '../assets/guerreiro-horda.gif'
 import wow from '../assets/Luci5-removebg-preview.png'
 import alura from '../assets/alura_oracle.mp4'
 import oracle from '../assets/alura-logo-escuro.mp4'
+import Decryptor_claro from '../assets/Decrytor_claro.mp4'
+import Decryptor_escuro from '../assets/Decrytor_escuro.mp4'
+import Decryptor_semFundo from '../assets/Decrytor_semFundo.png'
 
 import {
   ContainerHeader, ContainerMain, ContainerLeft, ContainerText, ContainerButtons,
@@ -130,6 +133,12 @@ const Home = () => {
     imagem: wow,
   };
 
+  const decrytorImages = {
+    claro: Decryptor_claro,
+    escuro: Decryptor_escuro,
+    imagem: Decryptor_semFundo,
+  };
+
   return (
 
     <ContainerMain theme={theme}>
@@ -140,6 +149,7 @@ const Home = () => {
             Seu navegador não suporta o elemento de vídeo.
           </video>}
 
+
           {theme === 'escuro' && <video autoPlay loop muted>
             <source src={logosImages[theme]} type="video/mp4" className='escuro' />
             Seu navegador não suporta o elemento de vídeo.
@@ -147,6 +157,18 @@ const Home = () => {
 
 
           {theme === 'imagem' && <img src={logosImages[theme]} className='imagem' alt='Logo Luci Wow' />}
+
+          <div class='decryptor_banner'>
+            {theme === 'claro' && <video autoPlay loop muted>
+              <source src={decrytorImages[theme]} type="video/mp4" className='claro' />
+              Seu navegador não suporta o elemento de vídeo.
+            </video>}
+
+            {theme === 'escuro' && <video autoPlay loop muted>
+              <source src={decrytorImages[theme]} type="video/mp4" className='escuro' />
+              Seu navegador não suporta o elemento de vídeo.
+            </video>}
+          </div>
 
           <ContainerButtonsTheme>
             <button onClick={themeDefault} className='button-default'>Claro</button>
@@ -203,7 +225,7 @@ const Home = () => {
                 <source src={themeImages[theme]} type="video/mp4" className='claro' />
                 Seu navegador não suporta o elemento de vídeo.
               </video>}
-           
+
             </ContainerImag>
             <ContainerInformation>
               <p className='text-1'> Nenhuma mensagem </p>

@@ -69,6 +69,21 @@ justify-content: space-between;
     left: 5%;
     top: -21%;
   }
+
+  .decryptor_banner{
+    //background-color: #2d2c2c; //#353131; 
+    width: 90%;
+    video {
+      width: 70%;
+      display: flex;
+      position: relative;
+      left: 16%;
+      top: 6%;
+      margin: 0;
+      padding: 0;      
+  }
+
+  }
   @media (max-width:1200px){
     .imagem {
       width: 43%;
@@ -179,7 +194,6 @@ gap: 2px;
   padding-left: 20px;
 }
 `
-
 export const ContainerButtonsTheme = styled.div`
     width: 10%;
     height: auto;
