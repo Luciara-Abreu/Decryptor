@@ -144,9 +144,10 @@ textarea {
   .error-message {
     position: absolute;
     color: red;
-    font-size: 20px;
-    left: 27%;
-    top: 80%;
+    font-size: 23px;
+    background: white;
+    left: 5%;
+    top: 78%;
 }
 
 @media (max-width:1200px){
