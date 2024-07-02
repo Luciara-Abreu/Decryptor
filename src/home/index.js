@@ -3,6 +3,7 @@ import useTextEncryption from '../hooks/useTextEncrytion';
 import atencao from '../assets/interrogacao.png'
 import pessoa from '../assets/em-busca-do-tesouro.mp4'
 import pessoablack from '../assets/homem-sem-rosto-procurando.gif'
+import luciHorda from '../assets/LuciHorda.mp4'
 import pessoaImage from '../assets/guerreiro-horda.gif'
 import wow from '../assets/Luci5-removebg-preview.png'
 import alura from '../assets/alura_oracle.mp4'
@@ -124,7 +125,7 @@ const Home = () => {
   const themeImages = {
     claro: pessoablack,
     escuro: pessoa,
-    imagem: pessoaImage,
+    imagem: luciHorda,
   };
 
   const logosImages = {
@@ -211,18 +212,18 @@ const Home = () => {
       </ContainerLeft>
 
       <ContainerRight>
-        {outputText === '' ? (
+        {outputText === '' ? ( /* <img src={themeImages[theme]} className='imagem' alt='thema com uma imagem' />} */
           <>
             <ContainerImag theme={theme}>
-              {theme === 'claro' && <img src={themeImages[theme]} className='escuro' alt='thema escuro' />}
-              {theme === 'imagem' && <img src={themeImages[theme]} className='imagem' alt='thema com uma imagem' />}
-              {/* {theme === 'claro' && <video autoPlay loop muted>
-                <source src={themeImages[theme]} type="video/mp4" className='claro' />
+              {theme === 'claro' && <img src={themeImages[theme]} className='thema claro' alt='thema claro' />}
+              {theme === 'imagem' && <video autoPlay loop controls volume="0.5">
+                <source src={themeImages[theme]} type="video/mp4" className='thema imagem' />
                 Seu navegador não suporta o elemento de vídeo.
-              </video>} */}
+              </video>}
+
 
               {theme === 'escuro' && <video autoPlay loop muted>
-                <source src={themeImages[theme]} type="video/mp4" className='claro' />
+                <source src={themeImages[theme]} type="video/mp4" className='thema escuro' alt='thema escuro' />
                 Seu navegador não suporta o elemento de vídeo.
               </video>}
 
@@ -230,7 +231,6 @@ const Home = () => {
             <ContainerInformation>
               <p className='text-1'> Nenhuma mensagem </p>
               <p className='text-1'> encontrada </p>
-
               <p className='text-2 '>Digite um texto que você deseja</p>
               <p className='text-3'>criptografar ou descriptografar.</p>
             </ContainerInformation>
