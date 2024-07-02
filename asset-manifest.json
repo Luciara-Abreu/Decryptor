@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/Decryptor/static/css/main.7cc3dbc6.css",
-    "main.js": "/Decryptor/static/js/main.71e6f32d.js",
+    "main.js": "/Decryptor/static/js/main.7d6977bd.js",
+    "static/media/LuciHorda.mp4": "/Decryptor/static/media/LuciHorda.3bf653bd1a50c6389006.mp4",
     "static/media/guerreiro-horda.gif": "/Decryptor/static/media/guerreiro-horda.aa3c70f8f92c29d7fdb3.gif",
     "static/media/em-busca-do-tesouro.mp4": "/Decryptor/static/media/em-busca-do-tesouro.cfdada7c3e96a4ac9db8.mp4",
     "static/media/homem-sem-rosto-procurando.gif": "/Decryptor/static/media/homem-sem-rosto-procurando.e127cd3719f949de392b.gif",
@@ -14,10 +15,10 @@
     "static/media/alura_oracle.mp4": "/Decryptor/static/media/alura_oracle.7264f5356fc99c47d2a8.mp4",
     "index.html": "/Decryptor/index.html",
     "main.7cc3dbc6.css.map": "/Decryptor/static/css/main.7cc3dbc6.css.map",
-    "main.71e6f32d.js.map": "/Decryptor/static/js/main.71e6f32d.js.map"
+    "main.7d6977bd.js.map": "/Decryptor/static/js/main.7d6977bd.js.map"
   },
   "entrypoints": [
     "static/css/main.7cc3dbc6.css",
-    "static/js/main.71e6f32d.js"
+    "static/js/main.7d6977bd.js"
   ]
 }
