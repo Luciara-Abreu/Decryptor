@@ -212,7 +212,7 @@ const Home = () => {
       </ContainerLeft>
 
       <ContainerRight>
-        {outputText === '' ? ( /* <img src={themeImages[theme]} className='imagem' alt='thema com uma imagem' />} */
+        {outputText === '' ? ( 
           <>
             <ContainerImag theme={theme}>
               {theme === 'claro' && <img src={themeImages[theme]} className='thema claro' alt='thema claro' />}
